@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart' as http;
-import 'package:geocoding/geocoding.dart';
+// import 'package:geocoding/geocoding.dart';
 import 'package:flutter/services.dart';
 // ignore: depend_on_referenced_packages
 import 'package:image_picker/image_picker.dart';
@@ -76,15 +76,15 @@ class _tempState extends State<temp> {
                       }),
 // -------------------------------  select video button ------------------------------------
 
-                  MaterialButton(
-                      color: Colors.blue,
-                      child: const Text("Pick video from Camera",
-                          style: TextStyle(
-                              color: Color.fromARGB(255, 255, 255, 255),
-                              fontWeight: FontWeight.bold)),
-                      onPressed: () {
-                        pickVideo();
-                      }),
+                  // MaterialButton(
+                  //     color: Colors.blue,
+                  //     child: const Text("Pick video from Camera",
+                  //         style: TextStyle(
+                  //             color: Color.fromARGB(255, 255, 255, 255),
+                  //             fontWeight: FontWeight.bold)),
+                  //     onPressed: () {
+                  //       pickVideo();
+                  //     }),
 // -------------------------------  upload button ------------------------------------
 
                   MaterialButton(
@@ -95,8 +95,7 @@ class _tempState extends State<temp> {
                               fontWeight: FontWeight.bold)),
                       onPressed: () {
                         try {
-                          api().uploadImage(
-                              video: video!, thumbnails: thumbnails!);
+                          api().uploadImage(  thumbnails: thumbnails!);
                         } catch (e) {
                           print(e);
                         }
